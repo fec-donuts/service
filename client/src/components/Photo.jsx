@@ -19,10 +19,11 @@ const Photo = (props) => {
 
     const Img = styled.img`
         display: inline-block;
-        animation: ${rotate} 2s linear infinite;
+        // animation: ${rotate} 2s linear infinite;
         padding: 2rem 1rem;
         font-size: 1.2rem;
-        
+        width: 150px;
+        height: 100px;
         `;
 
     return (

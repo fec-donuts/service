@@ -15,7 +15,6 @@ class App extends React.Component {
     
   
     render() {
-      const { prices } = this.state;
   
       return (
         <div>
