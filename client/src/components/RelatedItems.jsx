@@ -7,6 +7,7 @@ import styled, { keyframes } from 'styled-components';
 
 const Div1 = styled.div`
     position: relative;
+    float: left;
 `;
 
 
@@ -33,9 +34,11 @@ class RelatedItems extends React.Component {
                 <h1>Related Items</h1>
                 <Photo />
                 <Div1>
-                    <ProductName />
-                    <Price />
+                    <div>
+                        <ProductName />
+                    </div>
                     <Stars />
+                    <Price />
                 </Div1>
             </div>
         )
