@@ -6,11 +6,31 @@ import Stars from './Stars.jsx';
 
 
 
-const RelatedItems = (props) => {
-    return (
-        <h1>Related Items</h1>
-    )
+class RelatedItems extends React.Component {
+    constructor (props) {
+        super (props);
+        this.state = {
 
+        }
+    }
+
+
+
+
+
+
+
+
+
+    render () {
+        return (
+            <div border='1'>
+                <h1>Related Items</h1>
+                <Photo />
+                <Stars />
+            </div>
+        )
+    }
 }
 
 
