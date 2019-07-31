@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(express.static('./client/dist'));
 
 app.post('/pd', (req, res) => {
-   let body = req.body;
+   let body = req.body.id;
    db.savedInput(body, (err, data) => {
        if (err) {
         console.log(err);
