@@ -4,12 +4,12 @@ const con = mysql.createConnection ({
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'pd'
+    database: ''
 })
 
 con.connect( (err) => {
     if (err) throw err;
-    console.log('connect');
+    console.log('connected');
     
 });
 
@@ -23,7 +23,7 @@ const savedInput = (text, callback) => {
     });
 };
 
-const getMessages = (callback) => {
+const getShoes = (callback) => {
     const queryString = 'SELECT * FROM product_description;'
     con.query(queryString, (err, data) => {
         if (err) throw err;
@@ -42,4 +42,4 @@ const deleteMessage = (id, callback) => {
 }
 
 
-module.exports = {savedInput, getMessages, deleteMessage};
+module.exports = {savedInput, getShoes, deleteMessage};

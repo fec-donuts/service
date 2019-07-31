@@ -1,12 +1,12 @@
 const express = require('express');
-const db = require('../database/index.js');
+const db = require('./database/database');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = 8000;
 
 app.use(bodyParser.json());
-
-app.use(express.static('dist'));
+//app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('./client/dist'));
 
 app.post('/pd', (req, res) => {
    let body = req.body;
@@ -15,7 +15,7 @@ app.post('/pd', (req, res) => {
         console.log(err);
         res.end();
        }
-       db.getMessages((err, info) => {
+       db.getShoes((err, info) => {
            if (err) {
                console.log(err);
                res.end();
@@ -26,7 +26,7 @@ app.post('/pd', (req, res) => {
 });
 
 app.get('/pd', (req, res) => {
-    db.getMessages((err, data) => {
+    db.getShoes((err, data) => {
         if (err) {
             console.log(err);
             res.end();
@@ -43,7 +43,7 @@ app.delete('/pd', (req, res) => {
             console.log(err);
             res.end();
         }
-        db.getMessages((err, info) => {
+        db.getShoes((err, info) => {
             if (err) {
                 console.log(err);
                 res.end();
