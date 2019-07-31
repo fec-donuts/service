@@ -14,9 +14,9 @@ con.connect( (err) => {
 });
 
 const savedInput = (text, callback) => {
-    const queryString = `INSERT INTO product_description (Brand_Name, Pricing, In_Stock, Item_Weight, Product_Dimensions, 
+    const queryString = `INSERT INTO product_description (Brand_Name, Pricing, In_Stock, Item_Weight, Size, 
         Manufacturer_Number) VALUES ('${text.Brand_Name}', '${text.Pricing}', '${text.In_Stock}', '${text.Item_Weight}', 
-        '${text.Product_Dimensions}', '${text.Manufacturer_Number}', );`
+        '${text.Size}', '${text.Manufacturer_Number}', );`
     con.query(queryString, (err, data) => {
         if (err) throw err;
         callback(null, data);
