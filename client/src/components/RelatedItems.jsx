@@ -6,8 +6,8 @@ import Stars from './Stars.jsx';
 import styled, { keyframes } from 'styled-components';
 
 const Div1 = styled.div`
-    position: relative;
-    float: left;
+    // position: relative;
+    // float: left;
 `;
 
 
@@ -32,13 +32,13 @@ class RelatedItems extends React.Component {
         return (
             <div border='1'>
                 <Photo />
-                <Div1>
+                {/* <Div1> */}
                     <div>
                         <ProductName />
                     </div>
                     <Stars />
                     <Price />
-                </Div1>
+                {/* </Div1> */}
             </div>
         )
     }
