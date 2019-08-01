@@ -15,7 +15,17 @@ class App extends React.Component {
   
 
     render() {
-      const { prices } = this.state;
+        const headings = [
+            'Product ID',
+            'Product Name',
+            'Product Price',
+            'Product Description',
+          ];
+
+
+        const rows = [
+          ];
+
   
       return (
         <div>
@@ -26,3 +36,6 @@ class App extends React.Component {
     }
   }
   ReactDOM.render(<App />, document.getElementById('app'));
+
+
+export default App;
