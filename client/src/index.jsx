@@ -1,5 +1,6 @@
 import React from 'react';
-//import axios from 'axios';
+import axios from 'axios';
+
 class App extends React.Component {
     constructor(props) {
       super(props);
@@ -11,11 +12,8 @@ class App extends React.Component {
     
   
     render() {
-      const { prices } = this.state;
-  
       return (
         <div>
-       
         Hello
         </div>
       );
