@@ -31,7 +31,6 @@ class RelatedItems extends React.Component {
     render () {
         return (
             <div border='1'>
-                <h1>Related Items</h1>
                 <Photo />
                 <Div1>
                     <div>

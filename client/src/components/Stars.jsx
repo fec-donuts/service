@@ -6,7 +6,7 @@ const Stars = (props) => {
         display: inline-block;
         padding: 2rem 1rem;
         font-size: 1.2rem;
-        width: 75px;
+        width: 90px;
         height: 25px;
         `;
 

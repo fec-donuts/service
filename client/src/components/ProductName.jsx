@@ -3,7 +3,7 @@ import React from 'react';
 const ProductName = (props) => {
 
     return (
-        <a href=""> Product Name</a>
+        <a href="">Bomb ass sneakers everybody wants.</a>
     )
 
 }
