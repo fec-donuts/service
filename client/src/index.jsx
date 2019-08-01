@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 //import axios from 'axios';
 import RelatedItems from './components/RelatedItems.jsx';
 import styled, { keyframes } from 'styled-components';
+import axios from 'axios';
+import photos from '../../dataCreater.js';
 
 const Related = styled.div`
   margin: auto;
@@ -12,9 +14,10 @@ const Related = styled.div`
   float: left;
 `;
 
-const scroll = styled.div`
-  overflow: scroll;
-  scroll-behavior: smooth;
+const Scroll = styled.div`
+  width: 60%;
+  display: inline-flex;
+  overflow-x: scroll;
 `;
 
 const H1 = styled.h1`
@@ -42,31 +45,25 @@ class App extends React.Component {
 
     // create a down arrow button that refreshes the items with a new list, but
     // store old items with an up arrow to go back
+
+
     
   
     render() {
   
       return (
+        // the related items component will be reduced later with information that can be mapped over
         <div>
           <H1>Related Items</H1>
-          <scroll>
-            <Related>
-              <RelatedItems /> 
-            </Related>
-            <Related>
-              <RelatedItems /> 
-            </Related>
-            <Related>
-              <RelatedItems /> 
-            </Related>
-            <Related>
-              <RelatedItems /> 
-            </Related>
-            <Related>
-              <RelatedItems /> 
-            </Related>
-
-          </scroll>
+          <Scroll>
+            {photos.map( (photo, index) => {
+              return (
+                <Related>
+                  <RelatedItems key={index} image={photo.image} price={Math.random}/> 
+                </Related>
+              )
+            })}
+          </Scroll>
         </div>
       );
     }

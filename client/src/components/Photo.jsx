@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 
 
+
 const Photo = (props) => {
 
 
@@ -16,10 +17,9 @@ const Photo = (props) => {
         height: 100px;
         float: left;
     `;
-
-    return (
-        <Img src="../../Test_Image/testShoe.png" alt="Test Shoe"></Img>
-    )
+        return (
+            <Img src={props.image} alt="Test Shoe" ></Img>
+        )
 
 }
 

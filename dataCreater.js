@@ -6,4 +6,16 @@ const product3 = faker.commerce.product();
 const product4 = faker.commerce.product();
 
 
-module.exports = {product1, product2, product3, product4,}
+const photos = [
+    {image: faker.image.fashion()},
+    {image: faker.image.nature()},
+    {image: faker.image.nightlife()},
+    {image: faker.image.technics()},
+    {image: faker.image.sports()},
+    {image: faker.image.transport()}
+]
+
+
+// module.exports = {product1, product2, product3, product4}
+
+export default photos;
