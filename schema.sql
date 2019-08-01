@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS related_items;
+-- DROP DATABASE IF EXISTS related_items;
 
-CREATE DATABASE related_items;
+-- CREATE DATABASE related_items;
 
-USE related_items;
+USE 1f3trUWSKC;
 
 CREATE TABLE related (
   id int NOT NULL AUTO_INCREMENT,
