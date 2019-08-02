@@ -1,7 +1,8 @@
 import React from 'react';
 import Form1 from './components/Form1.jsx';
-import Form2 from './components/Form2.js';
+import Form2 from './components/Form2.jsx';
 import axios from 'axios';
+//import data from '../../database/data.csv';
 
 class App extends React.Component {
     constructor(props) {
@@ -64,6 +65,18 @@ class App extends React.Component {
         .then(response => console.log(response))
         .catch(error => console.log(error))
     }
+
+
+    componentDidMount() {
+        axios.get('/pd')
+          .then((res) => {
+            console.log(res.data);
+            this.setState({
+              input: res.data
+            });
+          })
+          .catch (err => console.log('not working'));
+      }
 
 
     render() {

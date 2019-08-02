@@ -5,11 +5,12 @@ const app = express();
 const port = 8000;
 
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('./client/dist'));
 
 app.post('/pd', (req, res) => {
    let body = req.body.id;
+   console.log(req.body)
    db.savedInput(body, (err, data) => {
        if (err) {
         console.log(err);
