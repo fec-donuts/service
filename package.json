@@ -2,7 +2,7 @@
   "name": "fec_shopazon",
   "version": "1.0.0",
   "description": "Front-End Capstone",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server.js"
