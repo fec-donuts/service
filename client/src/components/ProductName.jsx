@@ -1,10 +1,15 @@
 import React from 'react';
+// import productNames from '../../../dataCreater.js';
+
 
 const ProductName = (props) => {
 
-    return (
-        <a href="">This is a product with a name that will change based on what will be required for each image.</a>
-    )
+    // productNames.map( name, index => {
+        return (
+            <a href="">Filler information.</a>
+        )
+
+    // })
 
 }
 

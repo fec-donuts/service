@@ -1,9 +1,10 @@
 import React from 'react';
+import faker from 'faker';
 
 const Price = (props) => {
 
     return (
-        <p>$10000000</p>
+        <p>${faker.random.number(500)}</p>
     )
 
 }

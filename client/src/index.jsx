@@ -6,22 +6,22 @@ import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
 import photos from '../../dataCreater.js';
 
+
 const Related = styled.div`
   margin: auto;
   width: 25%;
-  // border: 3px solid black;
   padding: 10px;
   float: left;
 `;
 
 const Scroll = styled.div`
-  width: 60%;
+  width: 100%;
   display: inline-flex;
   overflow-x: scroll;
 `;
 
 const H1 = styled.h1`
-  border: 3px solid black;
+  // border: 3px solid black;
 `;
 
 
@@ -58,8 +58,8 @@ class App extends React.Component {
           <Scroll>
             {photos.map( (photo, index) => {
               return (
-                <Related>
-                  <RelatedItems key={index} image={photo.image} price={Math.random}/> 
+                <Related key={index}>
+                  <RelatedItems image={photo.image}/> 
                 </Related>
               )
             })}
