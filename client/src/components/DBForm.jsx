@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form1 = props => {
+const DBForm = props => {
     return (
         <div>
 
@@ -17,7 +17,7 @@ const Form1 = props => {
     )
 }
 
-export default Form1;
+export default DBForm;
 
 // <h4>
 // Product Description

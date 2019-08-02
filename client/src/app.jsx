@@ -1,6 +1,6 @@
 import React from 'react';
-import Form1 from './components/Form1.jsx';
-import Form2 from './components/Form2.jsx';
+import DBForm from './components/DBForm.jsx';
+import FakeForm from './components/FakeForm.jsx';
 import axios from 'axios';
 //import data from '../../database/data.csv';
 
@@ -23,14 +23,14 @@ class App extends React.Component {
             Product_Description: '',
 
             //conditional rendering
-            isForm1: true,
-            isForm2: false,
+            isDBForm: true,
+            isFakeForm: false,
             
         }
         
         this.handleChange = this.handleChange.bind(this);
-        this.handleForm2 = this.handleForm2.bind(this);
-        this.handleForm1 = this.handleForm1.bind(this);
+        this.handleFakeForm = this.handleFakeForm.bind(this);
+        this.handleDBForm = this.handleDBForm.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -42,19 +42,19 @@ class App extends React.Component {
         });
     }
 
-    handleForm1() {
+    handleDBForm() {
         this.setState({
-            isForm1: true,
-            isForm2: false
+            isDBForm: true,
+            isFakeForm: false
         });
     }
 
     
 
-    handleForm2() {
+    handleFakeForm() {
         this.setState({
-            isForm1: false,
-            isForm2: true
+            isDBForm: false,
+            isFakeForm: true
         });
     }
 
@@ -81,11 +81,11 @@ class App extends React.Component {
 
     render() {
 
-            if (this.state.isForm1 === true) {
-                return <Form1 change={this.handleChange} next={this.handleForm2}/>
+            if (this.state.isDBForm === true) {
+                return <DBForm change={this.handleChange} next={this.handleFakeForm}/>
             }
-            if (this.state.isForm2 === true) {
-                return <Form2 change={this.handleChange} back={this.handleForm1}/>
+            if (this.state.isFakeForm === true) {
+                return <FakeForm change={this.handleChange} back={this.handleDBForm}/>
             }
            
         

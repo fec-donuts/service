@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form2 = props => {
+const FakeForm = props => {
     return (
         <div>
         <input type='text' name='Product_Id' placeholder='Product_Id' onChange={props.change}></input><br></br>
@@ -13,4 +13,4 @@ const Form2 = props => {
     )
 }
 
-export default Form2;
+export default FakeForm;
