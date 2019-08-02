@@ -32,14 +32,12 @@ class RelatedItems extends React.Component {
     render () {
         return (
             <div border='1'>
-                <Photo image={this.props.image}/>
-                {/* <Div1> */}
+                <Photo photo={this.props.photo}/>
                     <div>
-                        <ProductName />
+                        <ProductName productName={this.props.productName}/>
                     </div>
-                    <Stars />
-                    <Price />
-                {/* </Div1> */}
+                    <Stars stars={this.props.stars}/>
+                    <Price price={this.props.price}/>
             </div>
         )
     }

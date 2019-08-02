@@ -6,7 +6,7 @@ const ProductName = (props) => {
 
     // productNames.map( name, index => {
         return (
-            <a href="">Filler information.</a>
+            <a href="">{props.productName}</a>
         )
 
     // })

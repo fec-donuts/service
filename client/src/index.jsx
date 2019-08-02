@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import RelatedItems from './components/RelatedItems.jsx';
 import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
-import photos from '../../dataCreater.js';
+import items from '../../dataCreater.js';
 
 
 const Related = styled.div`
@@ -29,6 +29,7 @@ class App extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
+        itemsTable: [],
       };
     
     }
@@ -43,8 +44,19 @@ class App extends React.Component {
     // create an on click function that will be used later to update the page
     // based on what is clicked
 
-    // create a down arrow button that refreshes the items with a new list, but
-    // store old items with an up arrow to go back
+    // componentDidMount () {
+    //   let count = 0;
+
+    //   while (count < 100) {
+    //     axios.post('/addItems', )
+    //       .then( response => {
+    //         this.setState({itemsTable: response.data})
+    //       })
+    //       .then(() => {
+    //         count += 5;
+    //       })
+    //   }
+    // }
 
 
     
@@ -56,10 +68,10 @@ class App extends React.Component {
         <div>
           <H1>Related Items</H1>
           <Scroll>
-            {photos.map( (photo, index) => {
+            {items.map( (item, index) => {
               return (
                 <Related key={index}>
-                  <RelatedItems image={photo.image}/> 
+                  <RelatedItems photo={item.image} price={item.price} productName={item.name} stars={item.stars}/> 
                 </Related>
               )
             })}

@@ -1,36 +1,71 @@
 const faker = require('faker');
 
-const product1 = faker.commerce.product();
-const product2 = faker.commerce.product();
-const product3 = faker.commerce.product();
-const product4 = faker.commerce.product();
 
-
-const photos = [
-    {image: faker.image.fashion()},
-    {image: faker.image.nature()},
-    {image: faker.image.nightlife()},
-    {image: faker.image.technics()},
-    {image: faker.image.sports()},
-    {image: faker.image.transport()},
-    {image: faker.image.cats()},
-    {image: faker.image.city()},
-    {image: faker.image.business()}
+// 10 random items with an image, name, rating, and price
+const items = [
+    {
+        image: faker.image.fashion(),
+        name: faker.lorem.sentence(6),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.nature(),
+        name: faker.lorem.sentence(8),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.nightlife(),
+        name: faker.lorem.sentence(5),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.technics(),
+        name: faker.lorem.sentence(10),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.sports(),
+        name: faker.lorem.sentence(8),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.transport(),
+        name: faker.lorem.sentence(8),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.cats(),
+        name: faker.lorem.sentence(5),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.city(),
+        name: faker.lorem.sentence(6),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.business(),
+        name: faker.lorem.sentence(10),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    },
+    {
+        image: faker.image.people(),
+        name: faker.lorem.sentence(5),
+        stars: '',
+        price: `$${faker.random.number(500)}`
+    }
 ]
 
-const productNames = [
-    {name: faker.lorem.sentence(6)},
-    {name: faker.lorem.sentence(8)},
-    {name: faker.lorem.sentence(5)},
-    {name: faker.lorem.sentence(10)},
-    {name: faker.lorem.sentence(8)},
-    {name: faker.lorem.sentence(5)},
-    {name: faker.lorem.sentence(6)},
-    {name: faker.lorem.sentence(10)},
-    {name: faker.lorem.sentence(5)},
 
-]
 
-// module.exports = {product1, product2, product3, product4}
 
-export default photos;
+export default items;
