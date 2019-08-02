@@ -7,12 +7,26 @@ const db = require("./database/database.js");
 
 const app = express();
 
-app.use( express.static(__dirname + '../client/dist') );
 app.use( bodyParser.json() );
 
+app.use( express.static('./client/dist') );
 
 
 
+
+app.post( '/addItems', (req, res) => {
+    // console.log(req.body)
+    console.log(db)
+    req.body.array.map( item => {
+        db.addItems( item, (err, data) => {
+            if (err) {
+                console.error(err);
+                res.status(404).end()
+            }
+        })
+    })
+    res.send('Items were added')
+})
 
 
 

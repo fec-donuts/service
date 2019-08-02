@@ -20,8 +20,30 @@ con.connect( function (err) {
   console.log('Connected to MySql Database!');
 });
 
+const addItems = function (item, callback) {
+  const queryString = `INSERT INTO related (photo, name, stars, price) VALUES ('${item.image}', '${item.name}', ${item.stars}, '${item.price}');`;
 
-module.export = con;
+  con.query(queryString, (err, data) => {
+    if (err) {
+      console.error(err);
+    }
+    callback(null, data);
+  })
+};
+
+// function addItems (item, callback) {
+//   const queryString = `INSERT INTO related (photo, name, stars, price) VALUES ('${item.image}', '${item.name}', ${item.stars}, '${item.price}');`;
+
+//   con.query(queryString, (err, data) => {
+//     if (err) {
+//       console.error(err);
+//     }
+//     callback(null, data);
+//   })
+// }
+
+
+module.export = {con, addItems};
 
 
 
