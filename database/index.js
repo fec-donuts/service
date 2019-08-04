@@ -1,7 +1,7 @@
 const pg = require('pg');
 
 
-const connectionString = 'postgres://root:password@shopazon/127.0.0.1:5432/photos';
+const connectionString = `postgres://${process.env.PG_USER}:${process.env.PG_PASSWORD}@127.0.0.1:5432/shopazonPhotos`;
 
 const pgClient = new pg.Client(connectionString);
 
