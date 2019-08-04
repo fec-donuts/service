@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 import RelatedItems from './components/RelatedItems.jsx';
 import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
@@ -28,15 +28,18 @@ class App extends React.Component {
       super(props);
       this.state = {
         itemsTable: [],
+        itemsRenderedCount: 0,
+        itemsRendered: [],
       };
     
     }
 
-    // create a get request to pull information to add to each component
-
+    
 
     // create a function that loops through the table gained from the get
     // request to populate the data
+
+
   
 
     // create an on click function that will be used later to update the page
@@ -46,45 +49,47 @@ class App extends React.Component {
 
     }
 
-    // componentDidMount () {
-    //   let count = 0;
-
-    //   while (count < 6) {
-    //     axios.post('/addItems', {array: items})
-    //       .then( response => {
-    //         this.setState({itemsTable: response.data})
-    //       })
-    //       .then(() => {
-    //         count += 10;
-    //       })
-    //       .catch(err => {
-    //         console.error(err);
-    //       })
-    //   }
-    // }
+    componentDidMount () {
+      axios.get('/grabItems')
+        .then ( response => {
+          this.setState({itemsTable: response.data})
+        })
+        // .then ( () => {
+        //   for (let i = 0; i < this.state.itemsRenderedCount; i++) {
+        //     let min = 0;
+        //     let max = 116;
+        //     let num = Math.floor(Math.random() * (max - min)) + min;
+        //     this.setState({itemsRendered: itemsRendered.concat(this.state.itemsTable[num])})
+        //   }
+        // })
+        .catch(err => {
+          console.error(err);
+        })
+    }
 
 
     
   
-    render() {
-  
-      return (
-        // the related items component will be reduced later with information that can be mapped over
-        <div>
-          <H1>Related Items</H1>
-          <Scroll>
-            {items.map( (item, index) => {
-              this.state.itemsTable.push(item);
-              return (
-                <Related key={index}>
-                  <RelatedItems photo={item.image} price={item.price} productName={item.name} stars={item.stars}/> 
-                </Related>
-              )
-            })}
-          </Scroll>
-          <button type="button" onClick={this.buttonClick.bind(this)}>Do not click this magical button! Kittens will explode!</button>
-        </div>
-      );
-    }
+    render() { 
+        return (
+          <div>
+            <H1>Related Items</H1>
+            <Scroll>
+              {this.state.itemsTable.map( item => {
+                if (this.state.itemsRenderedCount < 10) {
+                  this.state.itemsRenderedCount++;
+                  // this.setState({itemsRendered: this.state.itemsRendered.concat(item)})
+                return(
+                  <Related key={item.id}>
+                    <RelatedItems name={item.name} photo={item.photo} price={item.price} stars={item.stars}/> 
+                  </Related>
+                )
+                }
+              })}
+            </Scroll>
+            <button type="button" onClick={this.buttonClick.bind(this)}>Do not click this magical button! Kittens will explode!</button>
+          </div>
+        );
+      }
   }
   ReactDOM.render(<App />, document.getElementById('app'));

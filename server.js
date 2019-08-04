@@ -14,18 +14,14 @@ app.use( express.static('./client/dist') );
 
 
 
-app.post( '/addItems', (req, res) => {
-    // console.log(req.body)
-    console.log(db)
-    req.body.array.map( item => {
-        db.addItems( item, (err, data) => {
-            if (err) {
-                console.error(err);
-                res.status(404).end()
-            }
-        })
+app.get( '/grabItems', (req, res) => {
+    db.getItems( (err, array) => {
+        if (err) {
+            console.error(err);
+            res.status(404).end()
+        }
+        res.send(array);
     })
-    res.send('Items were added')
 })
 
 

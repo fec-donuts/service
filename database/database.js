@@ -20,30 +20,20 @@ con.connect( function (err) {
   console.log('Connected to MySql Database!');
 });
 
-const addItems = function (item, callback) {
-  const queryString = `INSERT INTO related (photo, name, stars, price) VALUES ('${item.image}', '${item.name}', ${item.stars}, '${item.price}');`;
+const getItems = (callback) => {
+  const queryString = `SELECT * FROM related;`;
 
-  con.query(queryString, (err, data) => {
+  con.query(queryString, (err, array) => {
     if (err) {
       console.error(err);
     }
-    callback(null, data);
+    callback(null, array);
   })
 };
 
-// function addItems (item, callback) {
-//   const queryString = `INSERT INTO related (photo, name, stars, price) VALUES ('${item.image}', '${item.name}', ${item.stars}, '${item.price}');`;
-
-//   con.query(queryString, (err, data) => {
-//     if (err) {
-//       console.error(err);
-//     }
-//     callback(null, data);
-//   })
-// }
 
 
-module.export = {con, addItems};
+module.exports = {con, getItems};
 
 
 

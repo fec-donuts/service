@@ -18,7 +18,7 @@ const Photo = (props) => {
         float: left;
     `;
         return (
-            <Img src={props.photo} alt="Test Shoe" ></Img>
+            <Img src={props.photo} alt="" ></Img>
         )
 
 }
