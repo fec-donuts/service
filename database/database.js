@@ -23,8 +23,8 @@ const savedInput = (text, callback) => {
     });
 };
 
-const getShoes = (callback) => {
-    const queryString = 'SELECT * FROM product_description;'
+const getShoes = (id, callback) => {
+    const queryString = `SELECT * FROM product_description where ID=${id};`
     con.query(queryString, (err, data) => {
         if (err) throw err;
         callback(null, data);

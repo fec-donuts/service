@@ -1,80 +1,47 @@
 import React from 'react';
 
 const DBForm = props => {
-    return (
-       
+
+    console.log(props.inputs);
+
+        return (
+
+
+            <div>
+
+            <h4>
+            Product Description
+            </h4>
+            
+                <p type='text' name='Brand_Name' placeholder='Brand_Name' onChange={props.change}> Brand {props.Brand_Name}
+                </p>
+            
+                <p type='text' name='Pricing' placeholder='Pricing' onChange={props.change}> Price {props.Pricing}
+                </p>
+            
+                <p type='text' name='In_stock' placeholder='In_Stock' onChange={props.change}> In stock {props.In_stock}
+                </p>
+            
+                <p type='text' name='Item_weight' placeholder='Item_weight' onChange={props.change}> Weight {props.Item_weight}
+                </p>
+            
+                <p type='text' name='Size' placeholder='Size' onChange={props.change}> Size  {props.Size}
+                </p>
+            
+                <p type='text' name='Manufacturer_Number' placeholder='Manufacturer_Number' onChange={props.change}> Manufacturer Number
+                </p>
+            
+                <p> 
+                    <button onClick={props.next}>next</button>
+                </p>
+            
+            </div>
         
-        <div>
-        <h4>  Product Description             
-        </h4>
-       
-       
-            <p> 
-                <input type='text' name='Brand_Name' placeholder='Brand_Name' onChange={props.change}></input><br></br> 
-            </p>
+        )
+    }
 
-            <p>
-                <input type='text' name='Pricing' placeholder='Pricing' onChange={props.change}></input><br></br>
-            </p>
-
-            <p>
-                <input type='text' name='In_Stock' placeholder='In_Stock' onChange={props.change}></input><br></br>
-            </p>
-
-            <p>
-                <input type='text' name='Item_weight' placeholder='Item_weight' onChange={props.change}></input><br></br>
-            </p>
-
-            <p> 
-                <input type='text' name='Size' placeholder='Size' onChange={props.change}></input><br></br>
-            </p>
-
-            <p>
-                <input type='text' name='Manufacturer_Number' placeholder='Manufacturer_Number' onChange={props.change}></input><br></br>
-            </p>
-    
-            <p> 
-                <button onClick={props.next}>next</button>
-            </p>
-
-       
-    
-        </div>
-
-       
-    )
-}
 
 export default DBForm;
 
-// <h4>
-// Product Description
-// </h4>
-//     <table>
-//       <thead>
-//       <tr>
-//         <th>Brand_Name</th>
-//         <th>Pricing</th>
-//         <th>In_Stock</th>
-//         <th>Item_weight</th>
-//         <th>Size</th>
-//         <th>Manufacturer_Number</th>
-//     </tr>
-//     </thead>
-//     <tbody>
 
-//     {props.product_description.map(function(product) {
-//       return (
-//         <tr key={product.Brand_Name}>
-//         <td>{product.Pricing}</td>
-//         <td>{product.In_Stock}</td>
-//         <td>{product.description}</td>
-//         <td> <a href={product.Item_weight}>  </a> </td>
-//           <td src={product.Size}>  </td>
-//           <td>{product.Manufacturer_Number}</td>
-//           </tr>
-//           )
-//     })}
 
-//         </tbody>
-//     </table>
