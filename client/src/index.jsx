@@ -45,6 +45,7 @@ class App extends React.Component {
     // create an on click function that will be used later to update the page
     // based on what is clicked
 
+
     buttonClick (e) {
 
     }
@@ -52,7 +53,7 @@ class App extends React.Component {
     componentDidMount () {
       axios.get('/grabItems')
         .then ( response => {
-          this.setState({itemsTable: response.data})
+          this.setState({itemsTable: response.data});
         })
         // .then ( () => {
         //   for (let i = 0; i < this.state.itemsRenderedCount; i++) {
@@ -78,8 +79,8 @@ class App extends React.Component {
               {this.state.itemsTable.map( item => {
                 if (this.state.itemsRenderedCount < 10) {
                   this.state.itemsRenderedCount++;
-                  // this.setState({itemsRendered: this.state.itemsRendered.concat(item)})
-                return(
+                  this.state.itemsRendered.push(item);
+                return (
                   <Related key={item.id}>
                     <RelatedItems name={item.name} photo={item.photo} price={item.price} stars={item.stars}/> 
                   </Related>
@@ -87,7 +88,7 @@ class App extends React.Component {
                 }
               })}
             </Scroll>
-            <button type="button" onClick={this.buttonClick.bind(this)}>Do not click this magical button! Kittens will explode!</button>
+            <button type="button" onClick={this.buttonClick.bind(this)}>More items</button>
           </div>
         );
       }
