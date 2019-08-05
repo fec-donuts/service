@@ -17,14 +17,25 @@ pgClient.connect( function (error) {
 //const query = pgClient.query()---***to build queriers 
 
 const getAllPhotos = (callback) => {
-  const queryString = 'SELECT * FROM photos;';
+  const queryString = 'SELECT * FROM photolist;';
   pgClient.query(queryString, (error, data) => {
     if (error) {
-      console.log(error);
+      console.error(error);
     }
     callback(null, data);
   });
 };
+
+const getPhoto = (photoid, callback) => {
+    const queryString = `SELECT * FROM photolist WHERE photo_id = ${photoid}`
+    pgClient.query(queryString, (error, data) => {
+        if (error) {
+          console.error(error);
+        }
+        callback(null, data);
+    })
+}
+
 
 // const getPhoto = (photo, callback) => {
 //   const queryString = `SELECT * FROM Photos WHERE name='${photo}'`
@@ -38,4 +49,4 @@ const getAllPhotos = (callback) => {
 
 
 
-module.exports = { getAllPhotos , pgClient };
+module.exports = { getAllPhotos , pgClient , getPhoto};

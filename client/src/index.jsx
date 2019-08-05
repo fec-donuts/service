@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import ReactImageMagnify from 'react-image-magnify';
+//import Photo from './components/Photo.jsx';
 
 
 
@@ -9,26 +11,29 @@ class App extends React.Component {
       super(props);
 
       this.state = {
-        photos: []
+        photos: [],
+        id: 1
       };
     
     }
   
     componentDidMount() {
-      axios.post('/all') 
+      axios.get('/singleObj', {params: {photoid: this.state.id}}) 
         .then(response =>{
-        
+        console.log(response, 'THIS IS WHAT YOU ARE LOOKING FOR' )
+        this.setState({
+          photos: response.data.rows
         })
+        })
+        .catch(error => console.error(error))
       
     }
   
     render() {
-    
-  
       return (
         <div>
-       
-            Hello from the other side.
+          <h1>Hello from the other side.</h1>
+          {/* <Photo photos={this.state.photos}/> */}
         </div>
       );
     }
