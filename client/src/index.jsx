@@ -1,12 +1,16 @@
 import React from 'react';
-import axios from 'axios';
+import ReactDOM from 'react-dom';
+//import axios from 'axios';
 
 class App extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {
-      };
-    
+      // this.state = {
+      //   question: '',
+      //   answer: '',
+      // };
+      // this.handleChange = this.handleChange.bind(this);
+      // this.handleSubmit = this.handleSubmit.bind(this);
     }
   
     
@@ -14,7 +18,7 @@ class App extends React.Component {
     render() {
       return (
         <div>
-        Hello
+          <h3>Have a Question</h3>
         </div>
       );
     }
