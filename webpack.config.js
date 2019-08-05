@@ -10,13 +10,17 @@ module.exports = {
   module: {
     rules: [
         { 
-          test: /\.(js|jsx)$/, exclude: /node_modules/, 
-          use: {
-            loader: 'babel-loader',
+          test: /\.(js|jsx, gif|png|jpe?g|svg)$/, exclude: /node_modules/, loader: 'url-loader?limit=9000', 
+          use: [
+            'file-loader', 'image-loader',
+            {
+            loader: 'babel-loader, image-webpack-loader', 
             options: {
+              disable: true,
               presets: ["@babel/preset-env", "@babel/preset-react"]
-            }
-          }
+            },
+            },
+          ],
         }
     ]
   },

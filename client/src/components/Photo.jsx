@@ -1,15 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+const faker = require('faker');
 
  const Photo = (props) => {
-//   <div>
-//     <h2>Photos Go Here</h2>
-//     {props.photos.map((photo) => {
-//       return(<div><img src={} key={photo.id} /></div>)
-//     })}
-//   </div>
+ 
+  const img = styled.img`
+    display:flex;
+    padding: 2rem 1rem;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 100px;
+    float: screenLeft; 
+  `;
+  return (
+      <img src={faker.image.avatar()} alt="prop" />
+  )
 
  };
 
  export default Photo;
-//hard code 7 to test

@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import ReactImageMagnify from 'react-image-magnify';
-//import Photo from './components/Photo.jsx';
-
+//import ReactImageMagnify from 'react-image-magnify';
+import Photo from './components/Photo.jsx';
 
 
 class App extends React.Component {
@@ -12,7 +11,7 @@ class App extends React.Component {
 
       this.state = {
         photos: [],
-        id: 1
+        id: 1,
       };
     
     }
@@ -33,7 +32,7 @@ class App extends React.Component {
       return (
         <div>
           <h1>Hello from the other side.</h1>
-          {/* <Photo photos={this.state.photos}/> */}
+        <Photo photo={this.state.test}/>
         </div>
       );
     }
