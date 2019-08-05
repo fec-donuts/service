@@ -9,9 +9,10 @@ const fs = require('fs');
 
 
 const createData = () => {
-    for(let i = 0; i < 100; i ++){
+    for(let i = 1; i < 101; i ++){
 
         fs.appendFileSync('./data.csv',
+        i + ',' +
         '"' + '$' + faker.random.number(500) + '"' + ',' +
         '"' + faker.commerce.productName() + '"' + ',' +
         '"' + faker.random.words() + '"' + ',' +

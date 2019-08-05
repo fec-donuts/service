@@ -1,24 +1,20 @@
 var mysql = require('mysql');
-// var mysqlConfig = require('./config.js');
+var mysqlConfig = require('./config.js');
 
 
-var con = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'shoes'
-});
-
-
-// var con = mysql.createConnection(mysqlConfig);
+var con = mysql.createConnection(mysqlConfig);
 
 con.connect((err) => {
-  if(err) console.log(err);
-  console.log('connected')
+  if(err) {
+    console.log(err)
+  } else {
+    console.log('connected')
+
+  }
 });
 
 var getAllProducts = function(callback) {
-  con.query('SELECT * FROM shoes', (err, sponsored) =>{
+  con.query('SELECT * FROM sponsoredProducts', (err, sponsored) =>{
     if (err) {
       callback(err, null);
       return;
@@ -30,4 +26,4 @@ var getAllProducts = function(callback) {
 
 
 
-module.exports = {getAllProducts};
+module.exports = {getAllProducts, con};

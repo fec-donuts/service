@@ -23,23 +23,22 @@ class App extends React.Component {
       console.log('That hurt!')
     }
     
-    // componentDidMount() {
-      //   let shoes = [];
-      //   axios.get('/sponsored')
-      //     .then(res => {
-        //       res.data.map(function(shoe) {
-          //         let tuple = [];
-          //         tuple.push(shoe.price, shoe.itemName, shoe.itemDescription, shoe.pictureUrl);
-          //         shoes.push(tupil);
-          //       });
-          //       this.setState({
-            //         shoes: shoes
-            //       });
-            //       // console.log(this.state.shoes);
-            //     })
-            //     .catch((err) => { console.log(err); });
-            // }
-            
+    componentDidMount() {
+        let shoes = [];
+        axios.get('/sponsored')
+          .then(res => {
+              res.data.map(function(shoe) {
+                  let tuple = [];
+                  tuple.push(shoe.price, shoe.itemName, shoe.itemDescription, shoe.pictureUrl);
+                  shoes.push(tuple);
+                });
+                this.setState({
+                    shoes: shoes
+                  });
+                  console.log(this.state.shoes);
+                })
+                .catch((err) => { console.log(err); });
+            }
             
             
             
@@ -50,7 +49,7 @@ class App extends React.Component {
 
       return (
         <div>
-          <Shoe click={this.handleClick} shoes={data} price={this.state.price} itemName={this.state.itemName} itemDescription={this.state.itemDescription} pictureUrl={this.state.pictureUrl} />
+          <Shoe click={this.handleClick} shoes={this.state.shoes} price={this.state.price} itemName={this.state.itemName} itemDescription={this.state.itemDescription} pictureUrl={this.state.pictureUrl} />
         </div>
       );
     }
