@@ -1,6 +1,5 @@
 import React from 'react';
 import DBForm from './components/DBForm.jsx';
-import FakeForm from './components/FakeForm.jsx';
 import axios from 'axios';
 //import data from '../../database/data.csv';
 
@@ -10,10 +9,11 @@ class App extends React.Component {
 
         this.state = {
             //Product specifications from database
-            id: 10,
+            id: 3,
             Brand_Name: '',
-            In_stock: '',
-            Item_weight: '',
+            Pricing: '',
+            In_Stock: '',
+            Item_Weight: '',
             Size: '',
             Manufacturer_Number: '',
 //how to pass around id??
@@ -45,8 +45,9 @@ class App extends React.Component {
             console.log(res.data);
             this.setState({
               Brand_Name: res.data[0].Brand_Name, 
-              In_stock: res.data[0].In_Stock,
-              Item_weight: res.data[0].Item_Weight,
+              Pricing: res.data[0].Pricing,
+              In_Stock: res.data[0].In_Stock,
+              Item_Weight: res.data[0].Item_Weight,
               Size: res.data[0].Size,
               Manufacturer_Number: res.data[0].Manufacturer_Number
             });
@@ -58,6 +59,7 @@ class App extends React.Component {
     render() {
         return (<div><DBForm 
                     Brand_Name={this.state.Brand_Name} 
+                    Pricing={this.state.Pricing}
                     In_Stock={this.state.In_Stock}
                     Item_Weight={this.state.Item_Weight}
                     Size={this.state.Size}

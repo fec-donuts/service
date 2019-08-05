@@ -19,20 +19,20 @@ const DBForm = props => {
                 <p type='text' name='Pricing' placeholder='Pricing' onChange={props.change}> Price {props.Pricing}
                 </p>
             
-                <p type='text' name='In_stock' placeholder='In_Stock' onChange={props.change}> In stock {props.In_stock}
+                <p type='text' name='In_Stock' placeholder='In_Stock' onChange={props.change}> In Stock {props.In_Stock}
                 </p>
             
-                <p type='text' name='Item_weight' placeholder='Item_weight' onChange={props.change}> Weight {props.Item_weight}
+                <p type='text' name='Item_Weight' placeholder='Item_Weight' onChange={props.change}> Weight {props.Item_Weight}
                 </p>
             
                 <p type='text' name='Size' placeholder='Size' onChange={props.change}> Size  {props.Size}
                 </p>
             
-                <p type='text' name='Manufacturer_Number' placeholder='Manufacturer_Number' onChange={props.change}> Manufacturer Number
+                <p type='text' name='Manufacturer_Number' placeholder='Manufacturer_Number' onChange={props.change}> Manufacturer Number {props.Manufacturer_Number}
                 </p>
             
                 <p> 
-                    <button onClick={props.next}>next</button>
+            
                 </p>
             
             </div>
@@ -43,5 +43,5 @@ const DBForm = props => {
 
 export default DBForm;
 
-
+        // <button onClick={props.next}>next</button>
 

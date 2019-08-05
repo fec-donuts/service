@@ -26,6 +26,7 @@ app.post('/pd', (req, res) => {
    })
 });
 
+
 app.get('/pd', (req, res) => {
 
     db.getShoes(req.query.id, (err, data) => {
