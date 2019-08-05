@@ -6,10 +6,18 @@ const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
   entry: SRC_DIR,
+  entry: {
+  vendor: ["styled-components"],
   output: {
     path: DIST_DIR,
     filename: 'bundle.js'
   },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+       name: "vendor",
+       minChunks: Infinity,
+     }),
+    ],
   module: {
     rules: [
         { 

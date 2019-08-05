@@ -1,0 +1,48 @@
+.DBForm-Header{
+    margin: 40px;
+    border: 5px solid rgb(230, 139, 21);
+  }
+  
+  .DBForm{
+    margin: 40px;
+    border: 5px solid rgb(1, 22, 90);
+  }
+
+
+  .DBForm-Title{
+    margin: 40px;
+    border: 5px solid rgb(244, 240, 250);
+    font-size: 50px;
+    text-align: left;
+  }
+
+
+  .Brand_Name {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .Pricing {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .In_Stock {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .Item_Weight {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .Size {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .Manufacturer_Number {
+    font-size: 15px;
+    text-align: center;
+  }
