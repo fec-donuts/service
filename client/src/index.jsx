@@ -4,6 +4,7 @@ import RelatedItems from './components/RelatedItems.jsx';
 import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
 import items from '../../dataCreater.js';
+import { Carousel } from 'react-responsive-carousel';
 
 
 const Related = styled.div`
