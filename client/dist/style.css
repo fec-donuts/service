@@ -1,48 +1,77 @@
 .DBForm-Header{
-    margin: 40px;
-    border: 5px solid rgb(230, 139, 21);
+  background: linear-gradient(to top, #49538b 15%, #f3f5f4 100%) no-repeat center center fixed;
+  width: 29%;
+  text-align: center;
   }
   
-  .DBForm{
-    margin: 40px;
-    border: 5px solid rgb(1, 22, 90);
+.DBForm{
+  color: #054ebb93; 
+  font-family: Courier, monospace; 
+  font-size: 50px; 
+  line-height: 90px; 
+  font-weight: bold; 
+  text-align: center;
+  text-shadow: 0 10px 10px rgb(26, 17, 1);
   }
 
-
-  .DBForm-Title{
-    margin: 40px;
-    border: 5px solid rgb(244, 240, 250);
-    font-size: 50px;
-    text-align: left;
-  }
 
 
   .Brand_Name {
+    margin-top: 20px;
+    color: #cbf7f393;
     font-size: 15px;
-    text-align: center;
+    background-color: rgb(218, 218, 219);
+    font-weight: bolder;
+    color: #1b2c3b;
+    border-radius: -100px;
   }
 
   .Pricing {
+    margin-top: 20px;
+    color: #cbf7f393;
     font-size: 15px;
-    text-align: center;
+    background-color: rgb(218, 218, 219);
+    font-weight: bolder;
+    color: #1b2c3b;
+    border-radius: -100px;
   }
 
   .In_Stock {
+  margin-top: 20px;
+    color: #cbf7f393;
     font-size: 15px;
-    text-align: center;
+    background-color: rgb(218, 218, 219);
+    font-weight: bolder;
+    color: #1b2c3b;
+    border-radius: -100px;
   }
 
   .Item_Weight {
+  margin-top: 20px;
+    color: #cbf7f393;
     font-size: 15px;
-    text-align: center;
+    background-color: rgb(218, 218, 219);
+    font-weight: bolder;
+    color: #1b2c3b;
+    border-radius: -100px;
   }
 
   .Size {
+  margin-top: 20px;
+    color: #cbf7f393;
     font-size: 15px;
-    text-align: center;
+    background-color: rgb(218, 218, 219);
+    font-weight: bolder;
+    color: #1b2c3b;
+    border-radius: -100px;
   }
 
   .Manufacturer_Number {
+    margin-top: 20px;
+    color: #cbf7f393;
     font-size: 15px;
-    text-align: center;
+    background-color: rgb(218, 218, 219);
+    font-weight: bolder;
+    color: #1b2c3b;
+    border-radius: -100px;
   }

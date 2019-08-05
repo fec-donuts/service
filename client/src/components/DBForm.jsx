@@ -13,7 +13,7 @@ const DBForm = props => {
 
             <header className="DBForm-Header">
 
-            <h4 className="DBForm-Title"> SHOPAZON</h4>
+            SHOPAZON
 
             </header>
              
