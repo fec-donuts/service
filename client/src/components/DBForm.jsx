@@ -9,7 +9,7 @@ const DBForm = props => {
         return (
 
 
-            <div className="DBForm"> 
+            <div id="DBForm"> 
 
             <header className="DBForm-Header">
 

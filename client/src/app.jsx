@@ -1,7 +1,7 @@
 import React from 'react';
 import DBForm from './components/DBForm.jsx';
 import axios from 'axios';
-//import data from '../../database/data.csv';
+ 
 
 class App extends React.Component {
     constructor(props) {
