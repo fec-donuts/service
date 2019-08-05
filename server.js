@@ -8,28 +8,28 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('./client/dist'));
 
-app.post('/pd', (req, res) => {
-   let body = req.body.id;
-   console.log(req.body)
-   db.savedInput(body, (err, data) => {
-       if (err) {
-        console.log(err);
-        res.end();
-       }
-       db.getShoes((err, info) => {
-           if (err) {
-               console.log(err);
-               res.end();
-           }
-           res.send(info);
-       })
-   })
-});
+// app.post('/pd', (req, res) => {
+//    let body = req.body.id;
+//    console.log(req.body)
+//    db.savedInput(body, (err, data) => {
+//        if (err) {
+//         console.log(err);
+//         res.end();
+//        }
+//        db.getShoes((err, info) => {
+//            if (err) {
+//                console.log(err);
+//                res.end();
+//            }
+//            res.send(info);
+//        })
+//    })
+// });
 
 
-app.get('/pd', (req, res) => {
-
-    db.getShoes(req.query.id, (err, data) => {
+app.get('/pd/:id', (req, res) => {
+// console.log(req.params);
+    db.getShoes(req.params.id, (err, data) => {
         if (err) {
             console.log(err);
             res.end();
