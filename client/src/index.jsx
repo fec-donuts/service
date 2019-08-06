@@ -4,7 +4,7 @@ import RelatedItems from './components/RelatedItems.jsx';
 import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
 import items from '../../dataCreater.js';
-import { Carousel } from 'react-responsive-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 
 const Related = styled.div`
@@ -89,7 +89,7 @@ class App extends React.Component {
                 }
               })}
             </Scroll>
-            <button type="button" onClick={this.buttonClick.bind(this)}>More items</button>
+            {/* <button type="button" onClick={this.buttonClick.bind(this)}>More items</button> */}
           </div>
         );
       }
