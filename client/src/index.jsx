@@ -31,6 +31,7 @@ class App extends React.Component {
         itemsTable: [],
         itemsRenderedCount: 0,
         itemsRendered: [],
+        idsRendering: [],
       };
     
     }
@@ -52,8 +53,18 @@ class App extends React.Component {
     }
 
     componentDidMount () {
+      while (this.state.idsRendering.length < 10) {
+        let min = 0;
+        let max = 100;
+        let num = Math.floor(Math.random() * (max - min)) + min;
+        if (!this.state.idsRendering.includes(num)) {
+          this.state.idsRendering.push(num);
+        }
+      }      
+
       axios.get('/grabItems')
         .then ( response => {
+          console.log(this.state.idsRendering)
           this.setState({itemsTable: response.data});
         })
         // .then ( () => {
@@ -70,6 +81,8 @@ class App extends React.Component {
     }
 
 
+
+
     
   
     render() { 
@@ -77,17 +90,20 @@ class App extends React.Component {
           <div>
             <H1>Related Items</H1>
             <Scroll>
-              {this.state.itemsTable.map( item => {
+              {/* {this.state.itemsTable.map( item => {
                 if (this.state.itemsRenderedCount < 10) {
                   this.state.itemsRenderedCount++;
-                  this.state.itemsRendered.push(item);
+                  this.state.itemsRendered.push(item); */}
+              {this.state.idsRendering.map( id => {
                 return (
-                  <Related key={item.id}>
-                    <RelatedItems name={item.name} photo={item.photo} price={item.price} stars={item.stars}/> 
+                  <Related key={id}>
+                    <RelatedItems name={this.state.itemsTable[id].name} photo={this.state.itemsTable[id].photo} price={this.state.itemsTable[id].price} stars={this.state.itemsTable[id].stars}/> 
                   </Related>
                 )
-                }
               })}
+
+                {/* // } */}
+              {/* // })} */}
             </Scroll>
             {/* <button type="button" onClick={this.buttonClick.bind(this)}>More items</button> */}
           </div>
