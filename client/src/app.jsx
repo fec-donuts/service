@@ -9,7 +9,7 @@ class App extends React.Component {
 
         this.state = {
             //Product specifications from database
-            id: 3,
+            id: 60,
             Brand_Name: '',
             Pricing: '',
             In_Stock: '',
@@ -40,7 +40,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/pd', {params:{id:this.state.id}})
+        axios.get(`/pd/${this.state.id}`)
           .then((res) => {
             console.log(res.data);
             this.setState({
