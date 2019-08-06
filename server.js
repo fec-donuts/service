@@ -38,23 +38,23 @@ app.get('/pd/:id', (req, res) => {
     });
 });
 
-app.delete('/pd', (req, res) => {
-    const message = req.body.id;
-    console.log(message);
-    db.deleteMessage(message, (err, data) => {
-        if (err) {
-            console.log(err);
-            res.end();
-        }
-        db.getShoes((err, info) => {
-            if (err) {
-                console.log(err);
-                res.end();
-            }
-            res.send(info);
-        });
-    });
-});
+// app.delete('/pd', (req, res) => {
+//     const message = req.body.id;
+//     console.log(message);
+//     db.deleteMessage(message, (err, data) => {
+//         if (err) {
+//             console.log(err);
+//             res.end();
+//         }
+//         db.getShoes((err, info) => {
+//             if (err) {
+//                 console.log(err);
+//                 res.end();
+//             }
+//             res.send(info);
+//         });
+//     });
+// });
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

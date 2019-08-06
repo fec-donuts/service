@@ -9,7 +9,7 @@ class App extends React.Component {
 
         this.state = {
             //Product specifications from database
-            id: 7,
+            id: 60,
             Brand_Name: '',
             Pricing: '',
             In_Stock: '',

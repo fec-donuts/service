@@ -11,11 +11,7 @@ const DBForm = props => {
 
             <div id="DBForm"> 
 
-            <header className="DBForm-Header">
-
-            SHOPAZON
-
-            </header>
+         
              
                 <p className="Brand_Name" type='text' name='Brand_Name' placeholder='Brand_Name' onChange={props.change}> Brand {props.Brand_Name}
                 </p>
@@ -38,6 +34,8 @@ const DBForm = props => {
                 <p> 
             
                 </p>
+
+                <footer className="DBForm-footer">  Add to Cart</footer> 
               
             </div>
         
