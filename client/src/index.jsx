@@ -12,7 +12,8 @@ class App extends React.Component {
         itemName: '',
         itemDescription: '',
         pictureUrl: '',
-        shoes: []
+        shoes: [],
+        indexArr: []
       };
     
     }
@@ -25,18 +26,26 @@ class App extends React.Component {
     
     componentDidMount() {
         let shoes = [];
+        while(this.state.indexArr.length < 9){
+          let min = 0;
+          let max = 100;
+          let num = Math.floor(Math.random() * (max - min)) + min; 
+          if(!this.state.indexArr.includes(num))
+          this.state.indexArr.push(num)
+        }
         axios.get('/sponsored')
           .then(res => {
-              res.data.map(function(shoe) {
-                  let tuple = [];
-                  tuple.push(shoe.price, shoe.itemName, shoe.itemDescription, shoe.pictureUrl);
-                  shoes.push(tuple);
-                });
-                this.setState({
-                    shoes: shoes
-                  });
-                  console.log(this.state.shoes);
-                })
+            res.data.map(function(shoe) {
+              let tuple = [];
+              tuple.push(shoe.price, shoe.itemName, shoe.itemDescription, shoe.pictureUrl);
+              shoes.push(tuple);
+            })
+            this.setState({
+              shoes: shoes
+              
+            })
+            console.log(this.state.shoes)
+          })
                 .catch((err) => { console.log(err); });
             }
             
@@ -49,9 +58,9 @@ class App extends React.Component {
 
       return (
         <div>
-          <Shoe click={this.handleClick} shoes={this.state.shoes} price={this.state.price} itemName={this.state.itemName} itemDescription={this.state.itemDescription} pictureUrl={this.state.pictureUrl} />
+          <Shoe indexArr={this.state.indexArr} click={this.handleClick} shoes={this.state.shoes} price={this.state.price} itemName={this.state.itemName} itemDescription={this.state.itemDescription} pictureUrl={this.state.pictureUrl} />
         </div>
       );
     }
-  }
+  };
   ReactDOM.render(<App />, document.getElementById('app'));
