@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import RelatedItems from './components/RelatedItems.jsx';
 import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
-import items from '../../dataCreater.js';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 
 const Related = styled.div`
@@ -24,7 +22,7 @@ const H1 = styled.h1`
   // border: 3px solid black;
 `;
 
-class App extends React.Component {
+export default class RelatedItemsApp extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -110,4 +108,6 @@ class App extends React.Component {
         );
       }
   }
-  ReactDOM.render(<App />, document.getElementById('app'));
+  // ReactDOM.render(<App />, document.getElementById('app'));
+
+  window.RelatedItemsApp = RelatedItemsApp;
