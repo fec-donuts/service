@@ -62,17 +62,8 @@ export default class RelatedItemsApp extends React.Component {
 
       axios.get('/grabItems')
         .then ( response => {
-          console.log(this.state.idsRendering)
           this.setState({itemsTable: response.data});
         })
-        // .then ( () => {
-        //   for (let i = 0; i < this.state.itemsRenderedCount; i++) {
-        //     let min = 0;
-        //     let max = 116;
-        //     let num = Math.floor(Math.random() * (max - min)) + min;
-        //     this.setState({itemsRendered: itemsRendered.concat(this.state.itemsTable[num])})
-        //   }
-        // })
         .catch(err => {
           console.error(err);
         })
@@ -88,10 +79,6 @@ export default class RelatedItemsApp extends React.Component {
           <div>
             <H1>Related Items</H1>
             <Scroll>
-              {/* {this.state.itemsTable.map( item => {
-                if (this.state.itemsRenderedCount < 10) {
-                  this.state.itemsRenderedCount++;
-                  this.state.itemsRendered.push(item); */}
               {this.state.idsRendering.map( id => {
                 return (
                   <Related key={id}>
@@ -99,15 +86,10 @@ export default class RelatedItemsApp extends React.Component {
                   </Related>
                 )
               })}
-
-                {/* // } */}
-              {/* // })} */}
             </Scroll>
-            {/* <button type="button" onClick={this.buttonClick.bind(this)}>More items</button> */}
           </div>
         );
       }
   }
-  // ReactDOM.render(<App />, document.getElementById('app'));
 
   window.RelatedItemsApp = RelatedItemsApp;
