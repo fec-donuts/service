@@ -11,7 +11,7 @@ connection.connect((err) => {
 
 
 const saveAllRatings = function(data,callback) {
-  const queryString = `INSERT INTO user (name,brand,item,stars,review,dateTime) VALUES ('${data.name}', '${data.brand}','${data.item}','${data.stars}','${data.review}','${data.ts}')`
+  const queryString = `INSERT INTO customerReviews (userName,brand,item,stars,review,dateTime) VALUES ('${data.userName}', '${data.brand}','${data.item}','${data.stars}','${data.review}')`
   connection.query(queryString, (err,data) => {
     if(err){
       console.log(err)
@@ -22,7 +22,7 @@ const saveAllRatings = function(data,callback) {
 };
 
 const getAllRatings = function( callback) {
-  const queryString = `SELECT * FROM customerReview`;
+  const queryString = `SELECT * FROM customerReviews`;
   connection.query(queryString, (err, data) => {
     if(err) {
       console.log(err)

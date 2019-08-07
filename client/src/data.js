@@ -19,7 +19,7 @@ var data = [{
     name: 'Phil',
     brand: 'under armor',
     item: 'curry',
-    stars: '1',
+    stars: 1,
     review: 'worse shoes ever'
      
 },
@@ -27,7 +27,7 @@ var data = [{
     name: 'Cole',
     brand: 'under armor',
     item: 'curry',
-    stars: '2',
+    stars: 2,
     review: 'Burn theses'
 
 }];

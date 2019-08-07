@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component'
 import axios from 'axios';
 import PercentageBar from './components/percentagebar.jsx';
-import data from '../src/data';
+//import data from '../src/data';
 import RatingReviews from './components/ratingReviews.jsx';
 
 
@@ -11,27 +11,53 @@ class App extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        // users: [],
-        // id: 0,
-        // name: "",
-        // brand: "",
-        // item: "",
-        // stars: 0,
-        // review: ""
-        data: data
+        users: [],
+        id: 0,
+        userName: "",
+        brand: "",
+        item: "",
+        stars: 0,
+        review: ""
+        
       };
-
+       
       this.componentDidMount = this.componentDidMount.bind(this)
       this.onStarClick = this.onStarClick.bind(this)
+      this.onChange = this.onChange.bind(this)
       this.onClick = this.onClick.bind(this)
     }
      
       componentDidMount(){
-
+        let users = [];
+        console.log()
+    axios.get('/ratings')
+    .then((response) => {
+      console.log(response.data,'response')
+       response.data.map(function(profile ){
+        let bucket = [];
+        bucket.push(profile.id,profile.userName,profile.brand,profile.item,profile.stars,profile.review);
+        users.push(bucket)
+       });
+       this.setState({
+         users: users
+       })
+       console.log(this.state.users,'users')
+      })
+      .catch((error) => {
+        console.log(error)
+      })
       }
 
       onStarClick(nextValue, prevValue, name) {
       this.setState({stars: nextValue});
+      }
+
+      onChange(event){
+        event.preventDefault()
+        console.log(event.target)
+        this.setState({
+          review: event.target.value
+        })
       }
 
       onClick() {
@@ -41,10 +67,10 @@ class App extends React.Component {
   
     render() {
       //const{rating} = this.state
-  console.log(data)
+  
       return (
         <div>
-        <h1 className='title'>Customer Reviews</h1>
+        <h1 className='header'>Customer Reviews</h1>
         <form id="1">
            <h4>Write Ratings: {this.stars}</h4>
           <StarRatingComponent 
@@ -52,16 +78,17 @@ class App extends React.Component {
           starCount={5}
           value={this.stars}
           onStarClick={this.onStarClick}/> 
-          <button type='button' onClick={this.onClick}>Write a review</button>
+          <input value={this.state.review} onChange={this.onChange}></input>
+          <button type='button' onClick={this.onClick}>Post Review</button>
         </form>
         
-         <p  key='5stars'>5stars </p> <input></input>
-         <p  key='4stars'>4stars </p> <input></input>
-         <p  key='3stars'>3stars </p> <input></input>
-         <p  key='2stars'>2stars </p> <input></input>
-         <p  key='1stars'>1stars </p> <input></input>
+         <p  key='5stars'>5 stars </p> <PercentageBar/>
+         <p  key='4stars'>4 stars </p> <PercentageBar/>
+         <p  key='3stars'>3 stars </p> <PercentageBar/>
+         <p  key='2stars'>2 stars </p> <PercentageBar/>
+         <p  key='1stars'>1 stars </p> <PercentageBar/>
          
-        <RatingReviews name={data.name} brand={this.state.brand} item={this.state.item} review={this.state.review}/>
+        <RatingReviews users={this.state.users} userName={this.state.userName} brand={this.state.brand} item={this.state.item} stars={this.state.stars} review={this.state.review}/>
          {/* <span id='5stars' key='5stars'>5stars <PercentageBar/></span> 
          <span id='4stars' key='4stars'>4stars <PercentageBar/></span> 
          <span id='3stars' key='3stars'>3stars <percentageBar/></span> 
