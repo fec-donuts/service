@@ -1,15 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require("./database/database.js");
+const morgan = require('morgan');
+const path = require('path');
 
-
-
-
+const port = process.env.PORT || 3010;
 const app = express();
+
+app.use(morgan('dev'));
 
 app.use( bodyParser.json() );
 
-app.use( express.static('./client/dist') );
+app.use(express.static(path.join('./client/dist')));
 
 
 
@@ -27,6 +29,7 @@ app.get( '/grabItems', (req, res) => {
 
 
 
-app.listen(3010, () => {
-    console.log('Listening on port 3010!');
-})
+app.listen(port, () => {
+    console.log(`server running at: http://localhost:${port}`);
+  });
+  
