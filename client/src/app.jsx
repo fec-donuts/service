@@ -68,4 +68,5 @@ class App extends React.Component {
                     change={this.handleChange} />
                     </div>)}
 }
-  export default App;
+
+export default App;
