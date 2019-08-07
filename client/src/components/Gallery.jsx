@@ -85,6 +85,6 @@ const Gallery = (props) => {
 //   return (<Pg>
 //       <img src={faker.image.avatar()} alt="prop" />  <img src={faker.image.animals()}/> <img src={faker.image.transport()}/>  
 //          </Pg>)
-// };
+ };
 
-// export default Gallery;
+ export default Gallery;
