@@ -77,8 +77,8 @@ export default class RelatedItemsApp extends React.Component {
     render() { 
         return (
           <div>
-            <H1>Related Items</H1>
-            <Scroll>
+            <h1>Related Items</h1>
+            <div>
               {this.state.idsRendering.map( id => {
                 return (
                   <Related key={id}>
@@ -86,7 +86,7 @@ export default class RelatedItemsApp extends React.Component {
                   </Related>
                 )
               })}
-            </Scroll>
+            </div>
           </div>
         );
       }
