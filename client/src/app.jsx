@@ -3,7 +3,7 @@ import DBForm from './components/DBForm.jsx';
 import axios from 'axios';
  
 
-class App extends React.Component {
+export default class App extends React.Component {
     constructor(props) {
         super(props);
 
@@ -68,4 +68,4 @@ class App extends React.Component {
                     change={this.handleChange} />
                     </div>)}
 }
-  export default App;
+
