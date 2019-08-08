@@ -1,26 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RelatedItems from './components/RelatedItems.jsx';
-import styled, { keyframes } from 'styled-components';
+// import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
+// import '../dist/style.css';
+// import css from '../dist/style.css';
+import ScrollArea from 'react-scrollbar';
+
+const related = {
+  margin: 'auto',
+  width: '25%',
+  padding: '10px',
+  float: 'left'
+}
 
 
-const Related = styled.div`
-  margin: auto;
-  width: 25%;
-  padding: 10px;
-  float: left;
-`;
+const scroll = {
+  width: '100%',
+  display: 'inline-flex',
+  overflowX: 'scroll'
+}
 
-const Scroll = styled.div`
-  width: 100%;
-  display: inline-flex;
-  overflow-x: scroll;
-`;
 
-const H1 = styled.h1`
-  // border: 3px solid black;
-`;
+// const H1 = styled.h1`
+//   // border: 3px solid black;
+// `;
 
 export default class RelatedItemsApp extends React.Component {
     constructor(props) {
@@ -78,12 +82,12 @@ export default class RelatedItemsApp extends React.Component {
         return (
           <div>
             <h1>Related Items</h1>
-            <div>
+            <div style={scroll}>
               {this.state.idsRendering.map( id => {
                 return (
-                  <Related key={id}>
+                  <div style={related} key={id}>
                     <RelatedItems name={this.state.itemsTable[id].name} photo={this.state.itemsTable[id].photo} price={this.state.itemsTable[id].price} stars={this.state.itemsTable[id].stars}/> 
-                  </Related>
+                  </div>
                 )
               })}
             </div>
@@ -93,3 +97,8 @@ export default class RelatedItemsApp extends React.Component {
   }
 
   window.RelatedItemsApp = RelatedItemsApp;
+
+  ReactDOM.render(
+    React.createElement(RelatedItemsApp),
+    document.getElementById('Related')
+  );

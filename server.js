@@ -19,7 +19,7 @@ app.use(express.static(path.join('./client/dist')));
 app.get( '/grabItems', (req, res) => {
     db.getItems( (err, array) => {
         if (err) {
-            console.error(err);
+            console.error(err, "Not getting anything here.");
             res.status(404).end()
         }
         res.send(array);

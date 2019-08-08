@@ -24,7 +24,7 @@ const getItems = (callback) => {
 
   con.query(queryString, (err, array) => {
     if (err) {
-      console.error(err);
+      console.error(err, "The error is coming from the database.");
     }
     callback(null, array);
   })
