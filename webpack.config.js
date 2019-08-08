@@ -1,5 +1,5 @@
 const path = require('path');
-const SRC_DIR = path.join(__dirname, '/client/src/index.jsx');
+const SRC_DIR = path.join(__dirname, '/client/src/relatedIndex.jsx');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
