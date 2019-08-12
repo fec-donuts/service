@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RelatedItems from './components/RelatedItems.jsx';
-// import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
-// import '../dist/style.css';
-// import css from '../dist/style.css';
 import ScrollArea from 'react-scrollbar';
 
 const related = {
@@ -20,11 +17,6 @@ const scroll = {
   display: 'inline-flex',
   overflowX: 'scroll'
 }
-
-
-// const H1 = styled.h1`
-//   // border: 3px solid black;
-// `;
 
 export default class RelatedItemsApp extends React.Component {
     constructor(props) {
@@ -75,9 +67,6 @@ export default class RelatedItemsApp extends React.Component {
 
 
 
-
-    
-  
     render() { 
         return (
           <div>
